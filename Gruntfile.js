@@ -18,21 +18,6 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
-
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      github: {
-        options: {
-          remote: '../',
-          branch: 'master'
-        }
-      }
-    },
     // Project settings
     yeoman: {
       // configurable paths
@@ -237,21 +222,14 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>'],
-        patterns: {
-          css: [
-            [/(\/bower_components\/bootstrap\/dist\/fonts)/g, 'god help me', function(match) {
-              return match.replace('/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/', '../fonts');
-            }]
-          ]
-        }
+        assetsDirs: ['<%= yeoman.dist %>']
       }
     },
 
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
-        root: '<%= yeoman.app %>'
+        //root: '<%= yeoman.app %>'
       }
     },
 
@@ -336,15 +314,7 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        },
-        // add this rule to copy the fonts:
-        {
-          expand: true,
-          flatten: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>/fonts',
-          src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*']
-        }],
+        }]
       },
       styles: {
         expand: true,
@@ -419,8 +389,6 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
-
 
   grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
