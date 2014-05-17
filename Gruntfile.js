@@ -336,7 +336,15 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }]
+        },
+        // add this rule to copy the fonts:
+        {
+          expand: true,
+          flatten: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>/fonts',
+          src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*']
+        }],
       },
       styles: {
         expand: true,
