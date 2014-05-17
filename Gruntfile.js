@@ -241,7 +241,7 @@ module.exports = function (grunt) {
         patterns: {
           css: [
             [/(\/bower_components\/bootstrap\/dist\/fonts)/g, 'god help me', function(match) {
-              return match.replace('/bower_components/bootstrap/dist/fonts', '../fonts');
+              return match.replace('/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/', '../fonts');
             }]
           ]
         }
