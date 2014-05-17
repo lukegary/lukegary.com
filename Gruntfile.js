@@ -26,9 +26,9 @@ module.exports = function (grunt) {
         push: true,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-      local: {
+      github: {
         options: {
-          remote: '../',
+          remote: 'git@github.com:lukegary/lukegary.com.git',
           branch: 'master'
         }
       }
