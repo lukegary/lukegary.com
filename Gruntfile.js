@@ -330,10 +330,10 @@ module.exports = function (grunt) {
           src: ['generated/*']
         },
         {
-            expand: true,
-            cwd: '<%= yeoman.app %>/bower_components/angular/vendor/assets/fonts/bootstrap/',
-            src: ['**'],
-            dest: '<%= yeoman.dist %>/fonts/' // Ionicons copy hack
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/angular/vendor/assets/fonts/bootstrap/',
+          src: ['**'],
+          dest: '<%= yeoman.dist %>/fonts/' // Ionicons copy hack
         }]
       },
       styles: {
