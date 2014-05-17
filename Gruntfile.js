@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         assetsDirs: ['<%= yeoman.dist %>'],
         patterns: {
           css: [
-            [/(\/bower_components\/bootstrap\-sass\-official\/vendor\/assets\/fonts\/bootstrap\/)/g, 'god help me', function(match) {
+            [/(\/bower_components\/bootstrap-sass-official\/vendor\/assets\/fonts\/bootstrap\/)/g, 'god help me', function(match) {
               return match.replace('/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/', '../fonts');
             }]
           ]
@@ -335,6 +335,12 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        },
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/bootstrap-sass-official/vendor/fonts/bootstrap',
+          src: ['**'],
+          dest: '<%= yeoman.dist %>/fonts/' // Ionicons copy hack
         }]
       },
       styles: {
