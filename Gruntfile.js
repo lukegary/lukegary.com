@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         assetsDirs: ['<%= yeoman.dist %>'],
         patterns: {
           css: [
-            [/(\/bower_components\/bootstrap-sass-official\/vendor\/assets\/fonts\/bootstrap\/)/g, 'god help me', function(match) {
+            [/(\/bower_components\/bootstrap\-sass\-official\/vendor\/assets\/fonts\/bootstrap\/)/g, 'god help me', function(match) {
               return match.replace('/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/', '../fonts');
             }]
           ]
