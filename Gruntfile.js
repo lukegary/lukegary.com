@@ -28,7 +28,7 @@ module.exports = function (grunt) {
       },
       github: {
         options: {
-          remote: 'git@github.com:lukegary/lukegary.com.git',
+          remote: '../',
           branch: 'master'
         }
       }
