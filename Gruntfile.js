@@ -236,14 +236,14 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       }
     },
 
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
-        //root: '<%= yeoman.app %>'
+        root: '<%= yeoman.app %>'
       }
     },
 
@@ -328,12 +328,6 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        },
-        {
-          expand: true,
-          cwd: '<%= yeoman.app %>/bower_components/angular/vendor/assets/fonts/bootstrap/',
-          src: ['**'],
-          dest: '<%= yeoman.dist %>/fonts/' // Ionicons copy hack
         }]
       },
       styles: {
