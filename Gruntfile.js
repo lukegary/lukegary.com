@@ -328,6 +328,12 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        },
+        {
+            expand: true,
+            cwd: '<%= yeoman.app %>/bower_components/angular/vendor/assets/fonts/bootstrap/',
+            src: ['**'],
+            dest: '<%= yeoman.dist %>/fonts/' // Ionicons copy hack
         }]
       },
       styles: {
