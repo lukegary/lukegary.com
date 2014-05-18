@@ -16,25 +16,33 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+      api_key: 77uea1t5jdncu6
+    </script>
+
   </head>
-  <body ng-app="lukegarycomApp">
+  <body ng-app="lukegarycomApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+
     <div class="container header">
+        <script type="IN/Login">
+            Hello, <?js= firstName ?> <?js= lastName ?>.
+        </script>
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
+        <li ng-class="{active:isActive('/')}"><a ng-href="#/main">Home</a></li>
+        <li ng-class="{active:isActive('/about')}"><a ng-href="#/about">About</a></li>
         <li><a ng-href="#">Contact</a></li>
       </ul>
       <h3>LukeGary</h3>
     </div>
     <div class="container" ng-view=""></div>
-<div class="container footer">
-  <p>Copyright © 2014 Luke Gary</p>
-</div>
+    <div class="container footer">
+      <p>Copyright © 2014 Luke Gary</p>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -46,6 +54,8 @@
        ga('send', 'pageview');
     </script>
 
+
+<div id="profile"></div>
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>

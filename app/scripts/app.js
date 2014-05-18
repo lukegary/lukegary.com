@@ -10,7 +10,11 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/main',
+        controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about',
         controller: 'MainCtrl'
       })
       .otherwise({
