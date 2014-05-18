@@ -21,17 +21,15 @@
       authorize: true
     </script>
 
- <script type="text/javascript">
-
-function loadData() {
-IN.API.Profile("me")
-   .result(function(result) { 
-      $("#profile").html('<script type="IN/FullMemberProfile" data-id="' + result.values[0].id + '"></script>');
-      IN.parse(document.getElementById("profile"))
-   })
-}
-
-</script>
+    <script type="text/javascript">
+    function loadData() {
+    IN.API.Profile("me")
+       .result(function(result) { 
+          $("#profile").html('<script type="IN/FullMemberProfile" data-id="' + result.values[0].id + '"></script>');
+          IN.parse(document.getElementById("profile"))
+       })
+    }
+    </script>
   </head>
   <body ng-app="lukegarycomApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
@@ -67,6 +65,7 @@ IN.API.Profile("me")
     </script>
 
 <div id="profile"></div>
+<script type="IN/Login" data-onAuth="loadData"></script>
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
