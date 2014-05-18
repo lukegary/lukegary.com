@@ -18,8 +18,20 @@
     <!-- endbuild -->
         <script type="text/javascript" src="http://platform.linkedin.com/in.js">
       api_key: 77uea1t5jdncu6
+      authorize: true
     </script>
 
+ <script type="text/javascript">
+
+function loadData() {
+IN.API.Profile("me")
+   .result(function(result) { 
+      $("#profile").html('<script type="IN/FullMemberProfile" data-id="' + result.values[0].id + '"></script>');
+      IN.parse(document.getElementById("profile"))
+   })
+}
+
+</script>
   </head>
   <body ng-app="lukegarycomApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
