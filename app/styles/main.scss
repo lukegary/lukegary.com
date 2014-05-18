@@ -12,6 +12,16 @@ body
 {
     font-family: 'Lato', 'sans-serif';
     }
+
+figure>img {
+    margin: 0 auto;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
 .profile 
 {
     min-height: 355px;
@@ -49,7 +59,7 @@ figcaption.ratings a:hover
     }
 span.tags 
 {
-    line-height: 150%;
+    line-height: 170%;
     background: #8dbff2;
     border-radius: 2px;
     color: #f5f5f5;
