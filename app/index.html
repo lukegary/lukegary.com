@@ -16,14 +16,34 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <style>
+    #main-nav {
+        display: block;
+        width: 100%;
+        min-height: 94px;
+        height: auto;
+        border-style: solid;
+        border-bottom:thick dotted #ff0000;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 123456;
+    }
+    ul {
+        list-style: none;
+    }
+    </style>
   </head>
   <body ng-app="lukegarycomApp">
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+
+    <div class="container" ng-view="" style="margin-top: 60px; background-color: black;"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
